@@ -1,0 +1,70 @@
+{
+  "name": "meta.json",
+
+  "posts": [
+    {
+      "title": "An Introduction to Hidden Markov Models",
+      "filename": "2014-11-17-hmm.md",
+      "layout": "blog",
+      "image": "/images/hmm/2.svg",
+      "date": "2014-11-17",
+      "excerpt": "What are hidden markov models? How do they work, and what problems can they help solve?"
+    },
+    {
+      "title": "On Ephemerality & Knowledge",
+      "filename": "2016-06-03-ephemeral.md",
+      "image": "/images/misc/ephemeral.jpg",
+      "date": "2016-06-03",
+      "excerpt": "How can knowledge and achievement be viewed through the lens of stocks and flows?"
+    },
+    {
+      "title": "Revealed Preference",
+      "filename": "2016-01-29-revealedpreference.md",
+      "image": "/images/misc/preference.jpg",
+      "date": "2016-01-29",
+      "excerpt": "Quick thought on decision making through revealed preference"
+    },
+    {
+      "title": "Regularity",
+      "filename": "2015-11-10-regularity.md",
+      "image": "/images/regularity/samurai.jpg",
+      "date": "2015-11-10",
+      "excerpt": "A note on accomplishing (great) things"
+    },
+    {
+      "title": "Quotient Groups - Introduction",
+      "filename": "2015-03-25-group2.md",
+      "image": "/images/groups2/3.svg",
+      "date": "2015-03-25",
+      "excerpt": "Armed with some terminology, we now explore some more interesting concepts in group theory, notably quotient groups"
+    },
+    {
+      "title": "Abstract Groups",
+      "filename": "2015-02-26-groups.md",
+      "image": "/images/groups/4.png",
+      "date": "2015-02-26",
+      "excerpt": "Groups are a fundamental, fascinating mathematical object. Everybody should be exposed to their study. Here I offer a very gentle introduction"
+    },
+    {
+      "title": "Crypto Concerns",
+      "filename": "2015-02-09-cryptoconcerns.md",
+      "image": "/images/cryptoconcerns/cover.jpg",
+      "date": "2015-02-09",
+      "excerpt": "Thoughts on existing limitations with Bitcoin-like cryptocurrencies"
+    },
+    {
+      "title": "Bitcoin Basics",
+      "filename": "2015-01-17-bitcoin.md",
+      "image": "/images/bitcoin/logo.png",
+      "date": "2015-01-17",
+      "excerpt": "A brief presentation of fundamental concepts in the Bitcoin network"
+    },
+    {
+      "title": "An Exploration of Basic Probability - Counting & Expectation",
+      "filename": "2014-11-02-probability-part-1.md",
+      "image": "/images/prob1/3.png",
+      "date": "2014-11-02",
+      "excerpt": "  In the first part of this series, I look at probability as counting, and expectation with non-numeric events. Can you tell me the expected value of red and blue?"
+    }
+  ]
+}

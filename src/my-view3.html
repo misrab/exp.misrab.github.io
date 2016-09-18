@@ -1,0 +1,91 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view3">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+
+      /*.project {
+        padding: 5px;
+        background-color: white;
+      }*/
+      .project > .title {
+        color: #428bca;
+        text-decoration: none;
+      }
+
+    </style>
+
+    <div class="card">
+      <h1>Projects</h1>
+
+      <div class="project">
+        <a href="http://afternoon-garden-4776.herokuapp.com/" class="title">
+          Neurosplash
+        </a>
+        <p>
+          This was an online educational platform I built with three friends.
+          It allowed users to create little multimedia slideshows called
+          "neurons" that would naturally connect to each other!
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="https://s3.amazonaws.com/misrabme/cs229.pdf" class="title">
+          Machine Learning
+        </a>
+        <p>
+          Three classmates and I built systems to recognise spoken language,
+          including a Support Vector Machine, Mixtures of Gaussians and an
+          Artificial Neural Network. We were able to distinguish languages
+          with pretty high accuracy!
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="https://s3.amazonaws.com/misrabme/ms233.pdf" class="title">
+          Auction Design
+        </a>
+        <p>
+          Automated, extremely high-frequency auctions are prevalent on the web
+          today. Here I analyze exchanges in online advertising, and the
+          incentives that affect bidding mechanisms.
+        </p>
+      </div>
+
+      <div class="project">
+        <a href="http://afternoon-reaches-1117.herokuapp.com/" class="title">
+          Interlude Chat
+        </a>
+        <p>
+          Automated, extremely high-frequency auctions are prevalent on the web
+          today. Here I analyze exchanges in online advertising, and the
+          incentives that affect bidding mechanisms.
+        </p>
+      </div>
+
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view3'
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,83 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../bower_components/zero-md/zero-md.html">
+
+
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+
+
+<dom-module id="my-articles">
+<template>
+  <style include="shared-styles iron-flex iron-flex-alignment">
+    :host {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .title {
+      font-size: 2em;
+    }
+    .date {
+      font-style: italic;
+    }
+
+    img {
+      display: block;
+      margin: 10px auto;
+      max-width: 70%;
+    }
+  </style>
+
+
+  <app-route
+    route="{{route}}"
+    pattern="/:filename"
+    data="{{routeData}}"></app-route>
+  <!-- <iron-ajax url="{{_profileUrlForUser(routeData.user_id)}}
+           on-response="handleResponse" auto> -->
+
+
+
+
+  <div class="card">
+    <zero-md file="/posts/{{routeData.filename}}">
+      <div class="md-html"></div>
+    </zero-md>
+
+  </div>
+
+</template>
+
+<script>
+  Polymer({
+    is: 'my-articles'
+
+    // properties: {
+    //   post_object: { type: Object },
+    //   filename: { type: String, value: "" }
+    // }
+
+    // attached: function() {
+    //   console.log('created');
+    // }
+
+    // ready: function() {
+    //   var self = this;
+    //   var filename = window.location.pathname.split("/").slice(-1).pop();
+    //
+    //   console.log(filename);
+    //
+    //   self.filename = filename;
+    // }
+  });
+</script>
+</dom-module>

@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+<dom-module id="post-summary">
+<template>
+  <style include="shared-styles iron-flex iron-flex-alignment">
+    :host {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .title {
+      font-size: 2em;
+    }
+    .date {
+      font-style: italic;
+    }
+  </style>
+
+
+  <a href="/articles/{{post_object.filename}}" class="card container flex-horizontal-with-ratios">
+    <div class="flexchild">
+      <img src="{{post_object.image}}" style="width: 100%;" />
+    </div>
+    <div class="flex4child padded">
+      <div class="title">{{post_object.title}}</div>
+      <div class="date">{{post_object.date}}</div>
+      <p>
+        {{post_object.excerpt}}
+      </p>
+    </div>
+  </a>
+
+</template>
+
+<script>
+  Polymer({
+    is: 'post-summary',
+
+    properties: {
+      post_object: Object
+    }
+  });
+</script>
+</dom-module>

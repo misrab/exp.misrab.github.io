@@ -1,0 +1,91 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<!-- <link rel="import" href="../bower_components/marked-element/marked-element.html"> -->
+<script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="../bower_components/zero-md/zero-md.html">
+
+
+<link rel="import" href="post-summary.html">
+
+
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <h1>Blog</h1>
+      <p>
+        Welcome! My posts are generally in the realm of tech,
+        but I've loosely listed them by topic. I hope you enjoy reading.
+      </p>
+    </div>
+
+
+    <template is="dom-repeat" items="{{meta_json.posts}}">
+        <post-summary post_object={{item}}></post-summary>
+    </template>
+    <!-- <zero-md file="/posts/2014-11-17-hmm.md">
+      <div class="md-html"></div>
+    </zero-md> -->
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2',
+
+      properties: {
+        POST_JSON: { type: String, value: "/meta/meta.json"},
+        meta_json: { type: Object, value: function () { return {}; } }
+      },
+
+      _generateRequest: function () {
+        var self = this;
+        var ajaxErr = function (r) { console.warn("[my-view2] AJAX error", r); };
+        var request = new XMLHttpRequest();
+        request.open('GET', this.POST_JSON, true);
+        request.onload = function () {
+          if (request.status >= 200 && request.status < 400) {
+             var result = JSON.parse(request.responseText);
+
+             result.posts.sort(function(a,b) {
+                if (a["date"] < b["date"]) return 1;
+                if (a["date"] > b["date"]) return -1;
+                return 0;
+             });
+
+             self.meta_json = result;
+            // sort by date
+
+          }
+          else { ajaxErr(request); }
+        };
+        request.onerror = function () { ajaxErr(request); };
+        request.send();
+      },
+
+
+      ready: function() {
+        this._generateRequest();
+      }
+    });
+  </script>
+</dom-module>
